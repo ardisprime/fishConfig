@@ -1,6 +1,5 @@
 
-set fish_greeting
-
-if status is-interactive
-end
+set fish_greeting "
+  welcome! <><
+"
 
