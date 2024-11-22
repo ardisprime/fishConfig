@@ -9,7 +9,7 @@ function c
   # move to folder
   cd $argv;
   # list
-  l 
+  list 
 end
 # abbreviations
 abbr --add cd "c"
