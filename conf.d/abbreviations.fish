@@ -1,30 +1,8 @@
 
-# install and remove (apt)
-abbr --add i "sudo apt install"
-abbr --add r "sudo apt purge ; sudo apt autoremove"
-abbr --add u "sudo apt update && sudo apt upgrade"
 # source fish config 
 abbr --add so "source /home/chris/.config/**/*.fish"
 # zellij
 abbr --add z "zellij"
-# exa
-function l
-  echo "";
-  exa --long --tree --level 2 --header $argv;
-  echo "" 
-end
-
-function la
-  echo "";
-  exa --all --long --tree --level 2 --header $argv;
-  echo "" 
-end
-
-function ls
-  echo "";
-  exa $argv;
-  echo "" 
-end
 # trash commands and abbreviations
 function trash-add
   mv $argv /trash/
