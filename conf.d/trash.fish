@@ -24,7 +24,7 @@ function trash-clean-all
   rm -fr /trash/*
 end
 function trash-list
-  ls /trash/
+  list-tree /trash/
 end
 function trash-recover
   mv /trash/$argv .
