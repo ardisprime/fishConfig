@@ -1,4 +1,18 @@
 
+# automatically add a trash folder if it doesnt exist
+if ! test -d /trash
+  echo "trash folder not found"
+  echo "creating ..."
+  sudo mkdir /trash
+  echo "done!"
+end
+if ! test -w /trash
+  echo "trash folder has no write permissions"
+  echo "adding permission ..."
+  sudo chmod o+w /trash
+  echo "done!"
+end
+
 # functions
 function trash-add
   mv $argv /trash/
