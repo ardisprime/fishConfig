@@ -20,6 +20,10 @@ end
 function list-long-all
   list-long --all $argv
 end
+# default list command 
+function l
+  list-tree $argv
+end
 # abbreviations
 abbr --add ls list
 abbr --add ll list-long
@@ -27,5 +31,4 @@ abbr --add lt list-tree
 abbr --add llt list-long-tree
 abbr --add la list-all
 abbr --add lla list-long-all
-abbr --add l list-tree
 
