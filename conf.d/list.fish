@@ -6,7 +6,7 @@ function list
   echo "" 
 end
 function list-long
-  list --long --header --time-style long-iso --total-size --git $argv
+  list --long --header --time-style long-iso --git $argv
 end
 function list-tree
   list --tree --level=2 $argv
