@@ -1,18 +1,21 @@
 
-# functions
+#functions
 function find-directories
-  c $(fd -I -t d | fzf)
+  set -l path_change (fd -I -t d | fzf)
+  c $(string join "/" "." $path_change)
 end
 function find-directories-git
-  c $(fd -t d | fzf)
+  set -l path_change (fd -t d | fzf)
+  c $(string join "/" "." $path_change)
 end
 function find-directories-all
-  c $(fd -I -H -t d | fzf)
+  set -l path_change (fd -I -H -t d | fzf)
+  c $(string join "/" "." $path_change)
 end
 
-# abbreviation for fd command
+#abbreviation for fd command
 abbr --add find fd
-# abbreviations
+#abbreviations
 abbr --add fd find-directories
 abbr --add fda find-directories-all
 abbr --add fdg find-directories-git
