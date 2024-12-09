@@ -45,12 +45,26 @@ function find-directories-all
   end
 end
 
+function find-directories-backwards
+  set -l start_path (pwd)
+  set -l path_point_to_change_to $(echo -e $(string replace -a "/" "\n" $(string trim -l -c '/' $(pwd) ) ) | fzf)
+  set -l new_path $(string join "" $(string split -f 1 $path_point_to_change_to  $(pwd) ) $path_point_to_change_to)
+  # if nothing selected, go back to the path at start
+  if [ $(string collect -a $new_path) = "" ]
+    c $start_path
+  # go to selected path
+  else
+    c $new_path 
+  end
+end
+
 # abbreviation for fd command
 abbr --add find fd
 # abbreviations
 abbr --add fd find-directories
 abbr --add fda find-directories-all
 abbr --add fdg find-directories-git
+abbr --add fdb find-directories-backwards
 
 
 
