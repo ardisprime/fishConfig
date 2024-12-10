@@ -1,6 +1,4 @@
 
-abbr --add n "nvim ."
-
-abbr --add nf "nvim (find-directories)"
-abbr --add nfa "nvim (find-directories-all)"
+#start nvims file explorer in current directory
+abbr --add n 'nvim .'
 
